@@ -13,6 +13,7 @@ import Add from 'material-ui/svg-icons/content/add';
 import Person from 'material-ui/svg-icons/social/person';
 import colors from '../../Utils/colors';
 import CircleImage from '../CircleImage/CircleImage';
+import CircularProgress from 'material-ui/CircularProgress';
 import StaticAppBar from '../StaticAppBar/StaticAppBar.react';
 import urls from '../../Utils/urls';
 import Footer from '../Footer/Footer.react';
@@ -360,6 +361,7 @@ export default class BrowseSkill extends React.Component {
         return (
             <div>
                 <StaticAppBar {...this.props} />
+
                 <div style={styles.container}>
                     <Paper style={style} zDepth={1}>
                         <div style={styles.center}>
@@ -456,6 +458,15 @@ export default class BrowseSkill extends React.Component {
                         value={this.state.searchQuery}
                       />
 
+                    {(this.state.skills.length===0 && !this.state.skillsLoaded) && (
+                    <h1 className='skill_loading_container'>
+                        <div className='center'>
+                            <CircularProgress size={62} color='#4285f5'/>
+                            <h4>Loading</h4>
+                        </div>
+                    </h1>
+                    )}
+
                     <div style={{
                         marginTop: '20px',
                         marginBottom: '40px',
@@ -470,8 +481,8 @@ export default class BrowseSkill extends React.Component {
                         </div>
                     </div>
                 <Footer />
+                <a href = "#top"><center>Back to top</center></a>
                 </div>
-        <a href = "#top"><center>Back to top</center></a>
     </div>
         );
     }

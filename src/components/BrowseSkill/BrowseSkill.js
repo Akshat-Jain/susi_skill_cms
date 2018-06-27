@@ -639,19 +639,21 @@ export default class BrowseSkill extends React.Component {
 
             {this.state.skillsLoaded ? (
               <div style={styles.container}>
-                <div style={styles.topRated}>
-                  <h2 style={{ paddingLeft: 16 }}>{this.state.text}</h2>
-                  {/* Scroll Id must be unique for all instances of SkillCardList*/}
-                  {!this.props.routeType && (
-                    <SkillCardScrollList
-                      scrollId="topRated"
-                      skills={this.state.topRatedSkills}
-                      modalValue={this.state.modalValue}
-                      languageValue={this.state.languageValue}
-                      skillUrl={this.state.skillUrl}
-                    />
-                  )}
-                </div>
+                {this.state.topRatedSkills.length && (
+                  <div style={styles.topRated}>
+                    <h2 style={{ paddingLeft: 16 }}>{this.state.text}</h2>
+                    {/* Scroll Id must be unique for all instances of SkillCardList*/}
+                    {!this.props.routeType && (
+                      <SkillCardScrollList
+                        scrollId="topRated"
+                        skills={this.state.topRatedSkills}
+                        modalValue={this.state.modalValue}
+                        languageValue={this.state.languageValue}
+                        skillUrl={this.state.skillUrl}
+                      />
+                    )}
+                  </div>
+                )}
                 {this.state.skills.length ? (
                   <div>
                     <SkillCardList

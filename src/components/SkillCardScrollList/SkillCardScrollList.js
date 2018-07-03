@@ -38,7 +38,7 @@ class SkillCardScrollList extends Component {
 
   scrollLeft = () => {
     let parentEle = document.getElementById(this.props.scrollId);
-    let scrollValue = $(parentEle).scrollLeft() - 275;
+    let scrollValue = $(parentEle).scrollLeft() - 280;
     $(parentEle)
       .stop()
       .animate({ scrollLeft: scrollValue }, 100);
@@ -46,7 +46,7 @@ class SkillCardScrollList extends Component {
 
   scrollRight = () => {
     let parentEle = document.getElementById(this.props.scrollId);
-    let scrollValue = $(parentEle).scrollLeft() + 275;
+    let scrollValue = $(parentEle).scrollLeft() + 280;
     $(parentEle)
       .stop()
       .animate({ scrollLeft: scrollValue }, 100);

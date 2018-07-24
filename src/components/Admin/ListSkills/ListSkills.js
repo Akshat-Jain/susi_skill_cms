@@ -242,7 +242,7 @@ class ListSkills extends React.Component {
       <FlatButton
         key={1}
         label="Change"
-        primary={true}
+        labelStyle={{ color: '#4285f4' }}
         onTouchTap={this.handleChange}
       />,
       <FlatButton
@@ -338,7 +338,7 @@ class ListSkills extends React.Component {
                 <FlatButton
                   key={1}
                   label="Ok"
-                  primary={true}
+                  labelStyle={{ color: '#4285f4' }}
                   onTouchTap={this.handleFinish}
                 />
               }
@@ -359,7 +359,7 @@ class ListSkills extends React.Component {
                 <FlatButton
                   key={1}
                   label="Ok"
-                  primary={true}
+                  labelStyle={{ color: '#4285f4' }}
                   onTouchTap={this.handleFinish}
                 />
               }
